@@ -10,15 +10,5 @@ import Foundation
 import UIKit
 
 extension UITextView {
-    open
-    func setTextAlignment(aligned: NSTextAlignment = .left) {
-        switch aligned {
-        case .right:
-            self.textAlignment = Helper_isRTLLanguage ? .left : .right
-        case .left:
-            self.textAlignment = Helper_isRTLLanguage ? .right : .left
-        default:
-            self.textAlignment = aligned
-        }
-    }
+   
 }

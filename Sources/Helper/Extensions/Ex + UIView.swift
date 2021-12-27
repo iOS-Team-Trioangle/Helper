@@ -191,4 +191,60 @@ extension UIView {
             self.addGestureRecognizer(gesture)
         }
     }
+    
+    func setFont(size: CGFloat,
+                 weight: Weight = .regular) {
+    
+        var fontValue = UIFont(name: "", size: size)
+        
+        switch weight {
+        case .regular:
+            fontValue = UIFont(name: Helper_RegularFont, size: size)
+        case .medium:
+            fontValue = UIFont(name: Helper_MediumFont, size: size)
+        case .bold:
+            fontValue = UIFont(name: Helper_BoldFont, size: size)
+        }
+        
+        switch self {
+        case is UILabel:
+            (self as? UILabel)?.font = fontValue
+        case is UITextView:
+            (self as? UITextView)?.font = fontValue
+        case is UITextField:
+            (self as? UITextField)?.font = fontValue
+        case is UIButton:
+            (self as? UIButton)?.titleLabel?.font = fontValue
+        default:
+            debug(print: "Not Handled Type")
+        }
+    }
+    
+    open
+    func setTextAlignment(aligned: NSTextAlignment = .left) {
+        
+        var align : NSTextAlignment = .left
+        
+        switch aligned {
+        case .right:
+            align = Helper_isRTLLanguage ? .left : .right
+        case .left:
+            align = Helper_isRTLLanguage ? .right : .left
+        default:
+            align = aligned
+        }
+        
+        switch self {
+        case is UILabel:
+            (self as? UILabel)?.textAlignment = align
+        case is UITextView:
+            (self as? UITextView)?.textAlignment = align
+        case is UITextField:
+            (self as? UITextField)?.textAlignment = align
+        case is UIButton:
+            (self as? UIButton)?.contentHorizontalAlignment = aligned == .left ? .left : .right
+        default:
+            debug(print: "Not Handled Type")
+        }
+    }
 }
