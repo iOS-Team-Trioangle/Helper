@@ -22,9 +22,11 @@ func initFonts(_Helper_RegularFont: String,
     Helper_BoldFont = _Helper_BoldFont
 }
 
+private var isRTL : Bool = false
+
 public var Helper_isRTLLanguage: Bool {
-    get { return false }
-    set { }
+    get { return isRTL }
+    set { isRTL = newValue }
 }
 
 public
