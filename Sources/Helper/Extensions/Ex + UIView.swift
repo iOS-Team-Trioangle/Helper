@@ -192,6 +192,7 @@ extension UIView {
         }
     }
     
+    open
     func setFont(size: CGFloat,
                  weight: Weight = .regular) {
     
