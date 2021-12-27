@@ -7,10 +7,10 @@
 
 import Foundation
 
-var Helper_RegularFont = ""
+public var Helper_RegularFont = ""
 
-var Helper_MediumFont = ""
+public var Helper_MediumFont = ""
 
-var Helper_BoldFont = ""
+public var Helper_BoldFont = ""
 
-var Helper_isRTLLanguage = false
+public var Helper_isRTLLanguage = false
